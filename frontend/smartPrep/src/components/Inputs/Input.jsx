@@ -1,11 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-const Input = ({
-    value, onChange, label, placeholder, type
-}) => {
-  return (
-    <div>Input</div>
-  )
+const Input = ({ value, onChange, label, placeholder, type }) => {
+
+    const [showPassword, setShowPassword] = useState(false);
+    const toggleShowPassword = () => {
+        setShowPassword(!showPassword);
+    };
+
+    return (
+        <div>
+            <label className="text-[13px] text-slate-800">
+                {label}
+            </label>
+            <div className='input-box'>
+                <input
+                    type={type === "password" ? (showPassword ? "text" : "password") : type}
+                    placeholder={placeholder}
+                    className='w-full bg-transparent outline-none'
+                    value={value}
+                    onChange={(e) => { onChange(e) }}
+                /> 
+                {
+                    type === "password" && (
+                        <>
+                            {
+                                showPassword ? (
+                                    <span
+                                        className='text-primary cursor-pointer'
+                                        style={{ fontSize: '22px' }}
+                                        onClick={toggleShowPassword}
+                                    >
+                                        👁️
+                                    </span>
+                                ) : (
+                                    <span
+                                        className='text-slate-400 cursor-pointer'
+                                        style={{ fontSize: '22px' }}
+                                        onClick={toggleShowPassword}
+                                    >
+                                        🙈
+                                    </span>
+                                )
+                            }
+                        </>
+                    )
+                }
+                
+            </div>
+        </div>
+    );
 }
 
-export default Input
+export default Input;

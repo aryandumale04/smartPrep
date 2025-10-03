@@ -35,8 +35,8 @@ const Login = ({ setCurrentPage }) =>{
                 label="Email Address"
                 placeholder="john@example.com"
                 type="text"
-                >
-                </Input>
+                />
+               
                 <Input
                 value={password}
                 onChange={({target}) => {
@@ -44,8 +44,8 @@ const Login = ({ setCurrentPage }) =>{
                 }}
                 label="Password"
                 placeholder="Min 8 Characters"
-                type="password">
-                </Input>
+                type="password" />
+               
             </form>
 
         </div>
