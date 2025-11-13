@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { LuEye, LuEyeOff } from "react-icons/lu";
+
 
 const Input = ({ value, onChange, label, placeholder, type }) => {
 
@@ -21,30 +23,28 @@ const Input = ({ value, onChange, label, placeholder, type }) => {
                     onChange={(e) => { onChange(e) }}
                 /> 
                 {
-                    type === "password" && (
-                        <>
-                            {
-                                showPassword ? (
-                                    <span
-                                        className='text-primary cursor-pointer'
-                                        style={{ fontSize: '22px' }}
-                                        onClick={toggleShowPassword}
-                                    >
-                                        👁️
-                                    </span>
-                                ) : (
-                                    <span
-                                        className='text-slate-400 cursor-pointer'
-                                        style={{ fontSize: '22px' }}
-                                        onClick={toggleShowPassword}
-                                    >
-                                        🙈
-                                    </span>
-                                )
-                            }
-                        </>
-                    )
-                }
+    type === "password" &&
+        (
+            showPassword ? (
+                <span
+                    className='text-primary cursor-pointer'
+                    style={{ fontSize: '22px' }}
+                    onClick={toggleShowPassword}
+                >
+                    <LuEye />
+                </span>
+            ) : (
+                <span
+                    className='text-slate-400 cursor-pointer'
+                    style={{ fontSize: '22px' }}
+                    onClick={toggleShowPassword}
+                >
+                    <LuEyeOff />
+                </span>
+            )
+        )
+}
+
                 
             </div>
         </div>
