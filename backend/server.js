@@ -1,8 +1,8 @@
-require("dotenv").config
+require("dotenv").config()
 const express = require("express");
 const cors = require("cors");
 const path = require("path")
-
+const  connectDB =  require("../backend/config/db");
 const app = express();
 
 //Middleware to handle CORS
@@ -14,6 +14,7 @@ app.use(
     })
 );
 
+connectDB();
 //Middleware 
 app.use(express.json());
 
@@ -21,4 +22,10 @@ app.use(express.json());
 //Routes
 
 //Server uploads folder 
-app.use("/uploads",express.static(path.join(__dirname,"uploads"), {}))
+app.use("/uploads",express.static(path.join(__dirname,"uploads"), {}));
+
+//Start Server
+const PORT = process.env.port || 5000;
+app.listen(PORT, () =>{
+    console.log(`Server running on PORT : ${PORT}`);
+});
