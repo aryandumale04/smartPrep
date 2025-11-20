@@ -19,6 +19,9 @@ logs/
 .env.test.local
 .env.production.local
 
+# Uploaded files
+uploads/
+
 # IDE / OS
 .DS_Store
 .vscode/
