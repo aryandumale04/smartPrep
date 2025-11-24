@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import { APP_FEATURES } from "../utils/data";
 import {LuSparkles} from 'react-icons/lu';
@@ -6,16 +7,24 @@ import HERO_IMG  from "../assets/hero-img.png"
 import Modal from "../components/Modal"
 import Login from "../pages/Auth/Login"
 import SignUp from "../pages/Auth/SignUp"
-
+import { UserContext } from '../context/userContext';
+import ProfileInfoCard from '../components/Cards/ProfileInfoCard';
 
 const Landingpage = () => {
-
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
 
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [currentPage, setCurrentPage] = useState("login");
 
-  const handleCTA = () => {};
+  const handleCTA = () => {
+    if (!user) {
+      setOpenAuthModal(true);
+
+    } else {
+      navigate("/dashnoard");
+    }
+  };
   
   return (
     <>
@@ -28,12 +37,12 @@ const Landingpage = () => {
             <div className='text-xl text-black font-bold'>
               SmartPrep : An Interview Preparation Platform
             </div>
-            <button className='bg-linear-to-r  from-[#FF9324] to-[#e99a4b] text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-black hover:text-white border border-white transition-colors cursor-pointer' onClick={()=>{
+            { user ? (<ProfileInfoCard/>) : ( <button className='bg-linear-to-r  from-[#FF9324] to-[#e99a4b] text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-black hover:text-white border border-white transition-colors cursor-pointer' onClick={()=>{
               setOpenAuthModal(true);
             }}>
               Login / Sign Up
               
-            </button>
+            </button> )}
           </header>
 
 
