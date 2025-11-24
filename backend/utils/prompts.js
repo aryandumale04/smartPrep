@@ -30,7 +30,7 @@ const conceptExplainPrompt = (question) => `
 You are an AI that explains technical interview concepts.
 
 TASK:
-- Explain the following question in depth as if teaching a beginner.
+-  Explain the following question briefly in 4–6 lines, simple and crisp.
 - Question: "${question}"
 - Provide a short, clear title summarizing the concept.
 - Include code examples only if helpful.
@@ -47,3 +47,4 @@ FORMAT:
   "explanation": "Detailed explanation here."
 }
 `;
+module.exports = { questionAnswerPrompt, conceptExplainPrompt}
