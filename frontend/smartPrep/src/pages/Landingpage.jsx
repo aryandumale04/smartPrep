@@ -22,7 +22,7 @@ const Landingpage = () => {
       setOpenAuthModal(true);
 
     } else {
-      navigate("/dashnoard");
+      navigate("/dashboard");
     }
   };
   
