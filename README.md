@@ -185,9 +185,9 @@ npm run dev
 ## 🧑‍💻 Author
 
 **Aryan Dumale**  
-Final Year Computer Engineering  
+Final Year Computer Engineering  Student
 Savitribai Phule Pune University (SPPU)  
-Full-Stack MERN Developer | AI Integration | Backend Engineering  
+Full-Stack MERN Developer 
 GitHub: https://github.com/aryandumale04 
 LinkedIn: https://www.linkedin.com/in/aryan-d-b83409257/
 
