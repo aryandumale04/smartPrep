@@ -59,7 +59,7 @@ This feature will analyze:
 - filler words  
 - pitch variation  
 
-Using rule-based logic for academic demonstration.
+
 
 
 
