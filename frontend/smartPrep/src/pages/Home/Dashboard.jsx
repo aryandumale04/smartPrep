@@ -42,7 +42,10 @@ const Dashboard = () => {
   }, []);
   return (
     <DashboardLayout>
+    {/* //need to work on the styling  */}
+
       <div className='container mx-auto pt-4 pb-4'>
+        {/* need to set max width  */}
         <div className='grid grid-cols-1 md:grid-cols-3 md:gap-7 pt-1 pb-6 px-4 md:px-0'>  
           {sessions?.map( (data, index) => (
             <SummaryCard
